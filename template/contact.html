@@ -1,0 +1,19 @@
+{% extends 'nav.html' %}
+{% block title %}Contacts{% endblock title %}
+{% block body %}
+
+<img src="static/contact.jpg" style="border-radius:15% 15% 0% 0%;" class="img-fluid" alt="...">
+<form class="form m-4" method="post" action="/contact">
+  {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">Description of issue</label>
+      <textarea type="desc" class="form-control" rows="3" id="textarea" name="desc"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock body %}  
